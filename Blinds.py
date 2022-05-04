@@ -12,17 +12,17 @@ class Blinds:
         self.loadSettings()
         Blinds.blindsInstance = self
         
-    def setOpen(self):
-        self.settings.openPosition = self.currentPosition
+    def setOpenPosition(self):
+        self.settings['openPosition'] = self.currentPosition
     
-    def setClosed(self):
-        self.settings.closedPosition = self.currentPosition
+    def setClosedPosition(self):
+        self.settings['closedPosition'] = self.currentPosition
     
     def open(self):
-        self.goto(self.settings.openPosition)
+        self.goto(self.settings['openPosition'])
         
     def close(self):
-        self.goto(self.settings.closedPosition)
+        self.goto(self.settings['closedPosition'])
 
     def openABit(self):
         self.rotate(90)

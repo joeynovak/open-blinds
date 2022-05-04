@@ -19,3 +19,11 @@ class blinds_api:
     def close(self):
         self.response.setResponseBody("Closing")
         Blinds.Blinds.blindsInstance.close()
+        
+    def setOpenPosition(self):
+        self.response.setResponseBody("Closing")
+        Blinds.Blinds.blindsInstance.setOpenPosition()
+        
+    def setClosedPosition(self):
+        self.response.setResponseBody("Closing")
+        Blinds.Blinds.blindsInstance.setClosedPosition()

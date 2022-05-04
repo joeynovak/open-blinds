@@ -15,6 +15,7 @@
           <h1>Open Blinds</h1>
           <p><button @click="open" class="button">Open</button><button @click="close" class="button button2">Close</button></p>
           <p><button @click="openABit" class="button">Open A Bit</button><button @click="closeABit" class="button button2">Close A Bit</button></p>
+          <p><button @click="setOpenPosition" class="button">Set Open</button><button @click="setClosedPosition" class="button button2">Set Closed</button></p>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
       <script type="text/javascript">
@@ -35,6 +36,12 @@
                   },
                   closeABit: function(){
                       fetch('/blinds-api/closeABit')
+                  },
+                  setOpenPosition: function(){
+                      fetch('/blinds-api/setOpenPosition')
+                  },
+                  setClosedPosition: function(){
+                      fetch('/blinds-api/setClosedPosition')
                   }
               }
             });
