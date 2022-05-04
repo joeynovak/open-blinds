@@ -1,0 +1,43 @@
+<html>
+   <head>
+      <title>ESP Web Server</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" href="data:,">
+      <style>html{font-family: Helvetica; display:inline-block; margin: 0px auto; text-align: center;}
+         h1{color: #0F3376; padding: 2vh;}p{font-size: 1.5rem;}.button{display: inline-block; background-color: #e7bd3b; border: none; 
+         border-radius: 4px; color: white; padding: 16px 40px; text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}
+         .button2{background-color: #4286f4;}
+      </style>
+   </head>
+   <body>
+      
+      <div id="app">
+          <h1>Open Blinds</h1>
+          <p><button @click="open" class="button">Open</button><button @click="close" class="button button2">Close</button></p>
+          <p><button @click="openABit" class="button">Open A Bit</button><button @click="closeABit" class="button button2">Close A Bit</button></p>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+      <script type="text/javascript">
+          new Vue({
+              el: '#app',
+              data: {
+                  message: 'Hello Vue.js!'
+              },
+              methods: {
+                  open: function(){
+                      fetch('/blinds-api/open')
+                  },
+                  close: function(){
+                      fetch('/blinds-api/close')
+                  },
+                  openABit: function(){
+                      fetch('/blinds-api/openABit')
+                  },
+                  closeABit: function(){
+                      fetch('/blinds-api/closeABit')
+                  }
+              }
+            });
+      </script>
+   </body>
+</html>

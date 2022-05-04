@@ -1,0 +1,3 @@
+import Blinds
+
+Blinds.open()
